@@ -1,87 +1,68 @@
 const portfolioData = {
     profile: {
-      name: "Venkata Reddy Bhimireddy",
+      name: "Yashwanth Anantha",
       title: "SOFTWARE ENGINEER",
-      email: "vbhimire@purdue.edu",
-      phone: "(317) 419-8533",
+      email: "yashwanthanantha99@gmail.com",
+      phone: "(463) 279-1911",
       github: "GitHub",
       linkedin: "LinkedIn",
-      bio : "I’m Venkata Reddy Bhimireddy, a software engineer and Master’s student at Purdue University Indianapolis. I specialize in building scalable Java applications using Spring Boot, microservices, and full-stack technologies to solve complex business problems efficiently."
+      bio : "I’m Yashwanth Anantha, a software engineer and Master’s student at Indiana University Indianapolis. I specialize in building scalable C# applications using .NET, microservices, and full-stack technologies to solve complex business problems efficiently."
     },
     education: [
         {
           id: 1,
-          university: "Purdue University, Indianapolis",
+          university: "Indiana University, Indianapolis",
           degree: "Master of Science",
           major: "Computer and Information Science",
-          graduationDate: "May 2025",
-          startDate: "August 2023",
-          endDate: "May 2025",
-          gpa: "3.63/4.0"
+          graduationDate: "May 2026",
+          startDate: "August 2024",
+          endDate: "May 2026",
+          gpa: "3.74/4.0"
         },
         {
           id: 2,
-          university: "Vasireddy Venkatadri Institute of Technology",
+          university: "KL University, India",
           degree: "Bachelor of Technology",
           major: "Computer Science and Engineering",
-          graduationDate: "July 2022",
+          graduationDate: "March 2022",
           startDate: "June 2018",
-          endDate: "July 2022",
-          gpa: "3.3/4.0"
+          endDate: "March 2022",
+          gpa: "3.8/4.0"
         }
       ],
     experience: [
       {
         id: 1,
-        company: "Mathematics Assistance Center",
-        title: "Math Tutor",
-        startDate: "February 2024",
+        company: "SuperQuickQuestion",
+        title: "Software Engineer",
+        location: "Indianapolis",
+        startDate: "May 2025",
         endDate: "Present",
         description: [
-          "Delivered personalized and group tutoring sessions in Calculus, Trigonometry, Algebra, and Geometry, enabling students to tackle complex mathematical problems with confidence.",
-          "Partnered with fellow tutors to design and refine effective teaching methodologies and resources, enhancing the overall support system for STEM students."
+          "Led design and implementation of a .NET Core microservice using C#, CQRS pattern, and Domain-Driven Design to meet business requirements for scalable and resilient distributed systems",
+          "Developed and maintained reusable field management libraries with SQL persistence and Azure Blob Storage, incorporating retry mechanisms to ensure high availability and fast data retrieval.",
+          "Built Azure Functions as isolated public endpoints for form submissions, enabling auto-scaling and system stability under high traffic without impacting system availability.",
+          "Created background worker services subscribing to Azure Service Bus for asynchronous processing including submission validation and duplicate detection, demonstrating expertise in event-driven architecture.",
+          "Provisioned and managed Azure infrastructure using Terraform, automating deployment pipelines with CI/CD tools to ensure consistent environment setups and rapid delivery",
+
         ]
       },
       {
         id: 2,
         company: "Cognizant",
-        title: "Software Engineer",
+        title: "Software Developer",
         location: "Hyderabad",
-        startDate: "August 2022",
-        endDate: "July 2023",
+        startDate: "Jan 2022",
+        endDate: "August 2024",
         description: [
-          "Crafted and deployed robust Java applications with over 1.5 years of hands-on development using the Spring framework (Spring Boot, Spring Security, Spring Data JPA), delivering scalable enterprise solutions aligned with business needs and industry-leading standards.",
-          "Developed and deployed scalable applications using Java, Ruby on Rails, and integrating Spring Boot web services to deliver high-performance enterprise solutions meeting industry standards.",
-          "Designed and optimized RESTful APIs and microservices with JSON, SOAP, and Apache Kafka, validated via Postman, enabling real-time data exchange and interoperability across distributed systems.",
-          "Containerized web and algorithmic solutions with Docker, deploying via Nginx, and automated CI/CD pipelines with Git, reducing deployment cycles by 20% and ensuring consistent code quality in Agile sprints."
-        ]
-      },
-      {
-        id: 3,
-        company: "Cognizant",
-        title: "Software Engineer Intern",
-        location: "Hyderabad",
-        startDate: "January 2022",
-        endDate: "August 2022",
-        description: [
-          "Participated in a Cognizant internship program, gaining hands-on experience with Java Spring Boot and Angular frameworks.",
-          "Learned to integrate back-end and front-end components by working on applications demonstrated by the company.",
-          "Collaborated with senior developers to implement best practices for scalable, secure application development using Spring Boot.",
-          "Applied Angular to build dynamic, responsive user interfaces, ensuring cross-browser compatibility and mobile responsiveness."
-        ]
-      },
-      {
-        id: 4,
-        company: "Technovert",
-        title: "Software Engineer Intern",
-        startDate: "September 2021",
-        endDate: "January 2022",
-        description: [
-          "Developed a leave and attendance management system for Keka Software, leveraging ASP.NET MVC for a structured and maintainable architecture.",
-          "Integrated ADO.NET for efficient database interactions, optimizing SQL queries to enhance data retrieval performance.",
-          "Designed and implemented role-based authentication and authorization using ASP.NET Identity, ensuring secure access to system functionalities."
+          "Developed and maintained full-stack applications using C# (.NET), Angular, and SQL Server for Thomson Reuters financial systems, improving performance by 20% through query optimization and frontend enhancements.",
+          "Wrote and optimized complex T-SQL queries, stored procedures, and database schemas for MS SQL Server and Oracle DB, significantly reducing API response times",
+          "Collaborated with frontend teams to build responsive web applications using Angular and JavaScript, ensuring cross-browser compatibility and consistent user experience",
+          "Integrated backend services with Azure DevOps pipelines and event-driven workflows to streamline continuous integration and delivery for financial applications",
+          "Strong experience in containerization of microservices architecture applications using Docker and Kubernetes, where I have containerized services of 3 development teams and managed deployments in AKS clusters"
         ]
       }
+      
     ],
     projects: [
       {
@@ -142,20 +123,20 @@ const portfolioData = {
     ],
     skills: [
       {
-        category: "Programming",
-        technologies: "Java, Python, C++, C, C#(.NET), Relational Database(SQL, MYSQL, Oracle, Postgres), NOSQL, T-Sql"
+        category: "Frontend & UI/UX",
+        technologies: "HTML5, CSS3, JavaScript, TypeScript, Angular, React, jQuery, Blazor, WPF"
       },
       {
-        category: "Web Technologies",
-        technologies: "HTML, CSS, Angular Js, React Js, Rest API, JavaScript, Typescript, PHP"
+        category: "Backend & APIs",
+        technologies: "C#, ASP.Net Core, ASP.NET MVC, ASP.NET Web API, Blazor, Entity Framework, JWT, LINQ, JWT Token Authentication & Authorization, Dependency Injection, async/await, Semantic Kernel, REST APIs"
       },
       {
-        category: "Tools",
-        technologies: "Eclipse, Spring Tool Suite, Git, GitHub, Visual Studio Code, Cloud - AWS, Postman, MS Word"
+        category: "Databases",
+        technologies: "SQL Server, PostgreSQL, MySQL, Oracle DB, SQLite, Mongo DB, NoSQL"
       },
       {
-        category: "Others",
-        technologies: "Data Structures & Algorithms, Spring Boot, Backend, OOPS, Design Patterns, MVC, SDLC, Agile"
+        category: "Cloud & DevOps",
+        technologies: "Azure (Functions, Service Bus, Event Grid, DevOps, CI/CD), Docker, Terraform, Jenkins, ArgoCD, Kubernetes"
       }
     ]
   };

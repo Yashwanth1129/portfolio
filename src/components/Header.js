@@ -24,7 +24,7 @@ const Header = () => {
     <div className="bg-black text-white p-6 sticky top-0 z-10">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <a 
-          href="https://imvenkat178.github.io/portfolio/" 
+          href="https://yashwanthanantha.us" 
           className="text-2xl font-mono"
           onClick={handleLogoClick}
         >
