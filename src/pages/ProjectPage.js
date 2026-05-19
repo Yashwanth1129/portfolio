@@ -38,7 +38,23 @@ const ProjectPage = () => {
           
           <div className="mb-8">
             <h1 className="text-6xl font-mono font-bold mb-4">{project.name}</h1>
-            <p className="text-xl font-mono text-gray-300">{project.subtitle}</p>
+            <p className="text-xl font-mono text-gray-300 mb-6">{project.subtitle}</p>
+            {project.liveUrl && (
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-mono text-sm uppercase bg-white text-black px-6 py-3 hover:bg-gray-200 transition-colors inline-block text-center"
+                >
+                  OPEN LIVE APP ↗
+                </a>
+                <span className="font-mono text-sm text-gray-400 break-all">{project.liveUrl}</span>
+              </div>
+            )}
+            {project.liveUrlNote && (
+              <p className="font-mono text-sm text-gray-500 mt-4 max-w-2xl">{project.liveUrlNote}</p>
+            )}
           </div>
           
           <div className="border-8 border-white mb-12">
@@ -111,7 +127,17 @@ const ProjectPage = () => {
             </div>
           </div>
           
-          <div className="mt-16 text-center">
+          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-4">
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-sm uppercase border-2 border-black px-6 py-3 hover:bg-black hover:text-white transition-colors inline-block"
+              >
+                OPEN LIVE APP ↗
+              </a>
+            )}
             <Link to="/" className="bg-black text-white font-mono py-3 px-6 hover:bg-gray-900 transition-colors inline-block">
               ← BACK TO PROJECTS
             </Link>

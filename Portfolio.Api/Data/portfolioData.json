@@ -1,0 +1,140 @@
+{
+  "profile": {
+    "name": "Yashwanth Anantha",
+    "title": "SOFTWARE ENGINEER",
+    "email": "yashwanthanantha99@gmail.com",
+    "phone": "(463) 279-1911",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "bio": "I'm Yashwanth Anantha, a software engineer and Master's student at Indiana University Indianapolis. I specialize in building scalable C# applications using .NET, microservices, and full-stack technologies to solve complex business problems efficiently."
+  },
+  "education": [
+    {
+      "id": 1,
+      "university": "Indiana University, Indianapolis",
+      "degree": "Master of Science",
+      "major": "Computer and Information Science",
+      "graduationDate": "May 2026",
+      "startDate": "August 2024",
+      "endDate": "May 2026",
+      "gpa": "3.74/4.0"
+    },
+    {
+      "id": 2,
+      "university": "KL University, India",
+      "degree": "Bachelor of Technology",
+      "major": "Computer Science and Engineering",
+      "graduationDate": "March 2022",
+      "startDate": "June 2018",
+      "endDate": "March 2022",
+      "gpa": "3.8/4.0"
+    }
+  ],
+  "experience": [
+    {
+      "id": 1,
+      "company": "SuperQuickQuestion",
+      "title": "Software Engineer",
+      "location": "Indianapolis",
+      "startDate": "May 2025",
+      "endDate": "Present",
+      "description": [
+        "Led design and implementation of a .NET Core microservice using C#, CQRS pattern, and Domain-Driven Design to meet business requirements for scalable and resilient distributed systems",
+        "Developed and maintained reusable field management libraries with SQL persistence and Azure Blob Storage, incorporating retry mechanisms to ensure high availability and fast data retrieval.",
+        "Built Azure Functions as isolated public endpoints for form submissions, enabling auto-scaling and system stability under high traffic without impacting system availability.",
+        "Created background worker services subscribing to Azure Service Bus for asynchronous processing including submission validation and duplicate detection, demonstrating expertise in event-driven architecture.",
+        "Provisioned and managed Azure infrastructure using Terraform, automating deployment pipelines with CI/CD tools to ensure consistent environment setups and rapid delivery"
+      ]
+    },
+    {
+      "id": 2,
+      "company": "Cognizant",
+      "title": "Software Developer",
+      "location": "Hyderabad",
+      "startDate": "Jan 2022",
+      "endDate": "August 2024",
+      "description": [
+        "Developed and maintained full-stack applications using C# (.NET), Angular, and SQL Server for Thomson Reuters financial systems, improving performance by 20% through query optimization and frontend enhancements.",
+        "Wrote and optimized complex T-SQL queries, stored procedures, and database schemas for MS SQL Server and Oracle DB, significantly reducing API response times",
+        "Collaborated with frontend teams to build responsive web applications using Angular and JavaScript, ensuring cross-browser compatibility and consistent user experience",
+        "Integrated backend services with Azure DevOps pipelines and event-driven workflows to streamline continuous integration and delivery for financial applications",
+        "Strong experience in containerization of microservices architecture applications using Docker and Kubernetes, where I have containerized services of 3 development teams and managed deployments in AKS clusters"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "cab-booking",
+      "name": "Cab Booking Application",
+      "subtitle": "Distributed Systems Project",
+      "technologies": ["Java", "Spring Boot", "Kafka", "React", "Spring Security", "Spring Data JPA"],
+      "summary": "A full-stack application that enables real-time location sharing and automated cab assignment.",
+      "description": [
+        "Developed a full-stack Cab Booking application using Spring Boot, Kafka, and React, enabling real-time location sharing and automated cab assignment.",
+        "Implemented Kafka producers and consumers to transmit user and cab driver GPS coordinates and matched the nearest driver based on geospatial proximity.",
+        "Built responsive React frontend components for both cab drivers and users, allowing real-time location input and dynamic cab assignment feedback.",
+        "Designed and consumed RESTful APIs for sending and retrieving location data, enabling seamless interaction between frontend and backend services.",
+        "Configured Kafka locally using Docker with Zookeeper, and integrated the messaging system into the Spring Boot application for asynchronous event handling.",
+        "Utilized H2 Database for development and schema management, with Spring Data JPA repositories managing persistence logic.",
+        "Followed MVC architecture and ensured modular code structure for scalability and maintainability of both backend and frontend.",
+        "Integrated JWT-based authentication for secure access and user management."
+      ],
+      "challenges": [
+        "Ensuring real-time data consistency between drivers and passengers",
+        "Optimizing the algorithm for matching the nearest available drivers",
+        "Managing the complexity of asynchronous messaging with Kafka"
+      ],
+      "outcomes": [
+        "Successfully implemented a scalable, real-time cab booking system",
+        "Demonstrated proficiency in distributed systems concepts",
+        "Gained experience with event-driven architecture"
+      ],
+      "year": "2023"
+    },
+    {
+      "id": "heart-matching",
+      "name": "Heart Matching – AI Powered Platform",
+      "subtitle": "AI Matchmaking System",
+      "technologies": ["Java", "Spring Boot", "Hibernate", "Spring Security", "JWT", "WebSockets", "Hugging Face AI"],
+      "summary": "A matchmaking platform that uses AI to compute user compatibility based on semantic similarities.",
+      "description": [
+        "Designed and implemented a full-stack matchmaking backend using Spring Boot, Spring Security, JWT, and WebSockets to support real-time communication.",
+        "Integrated Spring AI with Hugging Face's MiniLM-L6-v2 model to compute user compatibility using semantic embeddings and cosine similarity, improving match relevance.",
+        "Built secure authentication and authorization using JWT-based login, custom JwtFilter, and user roles.",
+        "Implemented private chat functionality with WebSocket endpoints, enabling real-time messaging with support for read receipts, message status, and user blocking.",
+        "Developed modular REST APIs (/api/auth, /api/match, /api/chat) with full Swagger/OpenAPI documentation for developer collaboration.",
+        "Configured H2 and MySQL databases, along with Spring Data JPA, to manage user profiles, chat logs, and AI-processed embeddings.",
+        "Enabled AI fallback mechanisms and exception handling to ensure availability and robustness even during Hugging Face API downtimes."
+      ],
+      "challenges": [
+        "Processing and analyzing semantic embeddings efficiently",
+        "Implementing real-time chat with WebSockets",
+        "Designing an effective AI-based matching algorithm"
+      ],
+      "outcomes": [
+        "Created a robust AI-powered matchmaking platform",
+        "Successfully implemented real-time chat features",
+        "Gained expertise in using AI models within Java applications"
+      ],
+      "year": "2023"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend & UI/UX",
+      "technologies": "HTML5, CSS3, JavaScript, TypeScript, Angular, React, jQuery, Blazor, WPF"
+    },
+    {
+      "category": "Backend & APIs",
+      "technologies": "C#, ASP.Net Core, ASP.NET MVC, ASP.NET Web API, Blazor, Entity Framework, JWT, LINQ, JWT Token Authentication & Authorization, Dependency Injection, async/await, Semantic Kernel, REST APIs"
+    },
+    {
+      "category": "Databases",
+      "technologies": "SQL Server, PostgreSQL, MySQL, Oracle DB, SQLite, Mongo DB, NoSQL"
+    },
+    {
+      "category": "Cloud & DevOps",
+      "technologies": "Azure (Functions, Service Bus, Event Grid, DevOps, CI/CD), Docker, Terraform, Jenkins, ArgoCD, Kubernetes"
+    }
+  ]
+}

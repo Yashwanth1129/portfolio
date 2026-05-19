@@ -28,12 +28,24 @@ const Projects = () => {
                     <span key={i} className="text-xs border border-white px-2 py-1 font-mono text-white">{tech}</span>
                   ))}
                 </div>
-                <Link 
-                  to={`/project/${project.id}`} 
-                  className="font-mono text-sm uppercase bg-white text-black px-3 py-1 hover:bg-gray-200 transition-colors inline-block"
-                >
-                  View Project
-                </Link>
+                <div className="flex flex-wrap gap-3">
+                  <Link
+                    to={`/project/${project.id}`}
+                    className="font-mono text-sm uppercase bg-white text-black px-3 py-1 hover:bg-gray-200 transition-colors inline-block"
+                  >
+                    View Project
+                  </Link>
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-mono text-sm uppercase border border-white text-white px-3 py-1 hover:bg-white hover:text-black transition-colors inline-block"
+                    >
+                      Live Demo ↗
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}

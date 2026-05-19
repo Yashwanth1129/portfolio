@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import ProjectPage from './pages/ProjectPage';
 import ScrollToTop from './components/ScrollToTop';
 import Celebration from './components/Celebration';
+import Chatbot from './components/Chatbot';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/project/:id" element={<ProjectPage />} />
       </Routes>
       <Celebration />
+      <Chatbot />
     </>
   );
 }

@@ -66,32 +66,50 @@ const portfolioData = {
     ],
     projects: [
       {
-        id: "cab-booking",
-        name: "Cab Booking Application",
-        subtitle: "Distributed Systems Project",
-        technologies: ["Java", "Spring Boot", "Kafka", "React", "Spring Security", "Spring Data JPA"],
-        summary: "A full-stack application that enables real-time location sharing and automated cab assignment.",
+        id: "resume-tailor-rag",
+        name: "AI Resume Tailor (RAG)",
+        subtitle: "Semantic Kernel · Vector Search · Full-Stack",
+        technologies: [
+          "C#",
+          ".NET 9",
+          "ASP.NET Core",
+          "Semantic Kernel",
+          "GitHub Models API",
+          "Qdrant",
+          "Razor Pages",
+          "Docker",
+          ".NET Aspire",
+          "QuestPDF",
+          "PdfPig"
+        ],
+        summary: "A full-stack application that uploads a resume PDF, indexes it in a vector database, and tailors content to a job description using RAG and LLM-powered rewriting.",
         description: [
-          "Developed a full-stack Cab Booking application using Spring Boot, Kafka, and React, enabling real-time location sharing and automated cab assignment.",
-          "Implemented Kafka producers and consumers to transmit user and cab driver GPS coordinates and matched the nearest driver based on geospatial proximity.",
-          "Built responsive React frontend components for both cab drivers and users, allowing real-time location input and dynamic cab assignment feedback.",
-          "Designed and consumed RESTful APIs for sending and retrieving location data, enabling seamless interaction between frontend and backend services.",
-          "Configured Kafka locally using Docker with Zookeeper, and integrated the messaging system into the Spring Boot application for asynchronous event handling.",
-          "Utilized H2 Database for development and schema management, with Spring Data JPA repositories managing persistence logic.",
-          "Followed MVC architecture and ensured modular code structure for scalability and maintainability of both backend and frontend.",
-          "Integrated JWT-based authentication for secure access and user management."
+          "Developed a Resume Tailor web application using ASP.NET Core, Semantic Kernel, and Qdrant, enabling users to upload a PDF resume and generate job-specific tailored versions.",
+          "Implemented PDF text extraction and intelligent chunking to split resume content into searchable sections while preserving document structure.",
+          "Built an ingestion pipeline that generates embeddings via GitHub Models (OpenAI-compatible API) and stores vectors in Qdrant for semantic search.",
+          "Designed a RAG workflow where job descriptions trigger vector similarity search to retrieve the most relevant resume sections before LLM tailoring.",
+          "Created a Semantic Kernel plugin (`resume_search`) with automatic function calling so the chat assistant grounds responses in indexed resume data only.",
+          "Built a dedicated tailoring service that preserves the user’s original resume sections and rewrites bullets with ATS-friendly keywords without inventing experience.",
+          "Developed a responsive web UI with resume upload, job description input, chat-based Q&A, and structured tailor output with Markdown and PDF download.",
+          "Configured Qdrant locally with Docker (gRPC/HTTP) and integrated the Microsoft Semantic Kernel Qdrant vector store connector for collection management and upsert/search operations.",
+          "Used .NET Aspire AppHost and shared service defaults for observability, health checks, HTTP resilience, and multi-service orchestration.",
+          "Applied dependency injection for modular services (PDF loader, chunker, ingestion, vector search, tailoring, PDF export) following clean separation of concerns."
         ],
         challenges: [
-          "Ensuring real-time data consistency between drivers and passengers",
-          "Optimizing the algorithm for matching the nearest available drivers",
-          "Managing the complexity of asynchronous messaging with Kafka"
+          "Aligning OpenAI-compatible GitHub Models API calls with Semantic Kernel chat and embedding endpoints",
+          "Ensuring Qdrant collections receive vectors correctly (embedding failures vs. empty collections)",
+          "Preserving original resume structure in tailored output instead of forcing a generic template",
+          "Handling long-running LLM/embedding requests under Aspire HTTP resilience and timeout policies",
+          "Avoiding nested HTML forms and fixing file export flows (PDF/Markdown download)"
         ],
         outcomes: [
-          "Successfully implemented a scalable, real-time cab booking system",
-          "Demonstrated proficiency in distributed systems concepts",
-          "Gained experience with event-driven architecture"
+          "Delivered an end-to-end RAG pipeline: PDF → chunks → embeddings → Qdrant → job-driven retrieval → tailored resume",
+          "Demonstrated practical use of vector databases and semantic search for real-world document tailoring",
+          "Gained hands-on experience with Semantic Kernel plugins, embeddings, and LLM orchestration in .NET"
         ],
-        year: "2023"
+        year: "2025",
+        liveUrl: "http://localhost:5140/",
+        liveUrlNote: "Runs locally while developing — update this URL when deployed to your server."
       },
       {
         id: "heart-matching",
