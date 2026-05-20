@@ -15,7 +15,7 @@ const Logo = ({ size = 40 }) => {
         lineHeight: '0.8',
         letterSpacing: '-1px',
       }}>
-        V
+        Y
       </div>
       <div style={{
         fontFamily: 'sans-serif',
@@ -25,7 +25,7 @@ const Logo = ({ size = 40 }) => {
         textTransform: 'uppercase',
         marginTop: `${size * 0.15}px`,
       }}>
-        Venkat
+        Yashwanth
       </div>
     </div>
   );

@@ -1,4 +1,8 @@
-export const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5241';
+// Empty string = same-origin /api (Docker nginx proxy). Dev fallback: localhost API.
+export const API_URL =
+  process.env.REACT_APP_API_URL !== undefined
+    ? process.env.REACT_APP_API_URL
+    : 'http://localhost:5241';
 
 export async function sendContactMessage({ name, email, subject, message }) {
   const response = await fetch(`${API_URL}/api/contact`, {

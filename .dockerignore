@@ -1,0 +1,14 @@
+**/.git
+**/.vs
+**/.vscode
+**/node_modules
+**/bin
+**/obj
+**/.env
+**/.env.*
+!**/.env.example
+**/npm-debug.log
+**/*.md
+!DEPLOY.md
+**/agent-tools
+portfolio/.git

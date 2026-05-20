@@ -1,0 +1,23 @@
+# React portfolio frontend → nginx (with /api reverse proxy to portfolio-api)
+FROM node:20-alpine AS build
+WORKDIR /app
+
+COPY package.json package-lock.json* ./
+RUN npm ci 2>/dev/null || npm install
+
+COPY public ./public
+COPY src ./src
+COPY tailwind.config.js ./
+
+# Same-origin /api when behind nginx; override for split-host deploys
+ARG REACT_APP_API_URL=
+ENV REACT_APP_API_URL=$REACT_APP_API_URL
+# Asset paths for self-hosted domain (not GitHub Pages subpath)
+ENV PUBLIC_URL=/
+
+RUN npm run build
+
+FROM nginx:1.27-alpine
+COPY docker/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/build /usr/share/nginx/html
+EXPOSE 80

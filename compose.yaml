@@ -1,0 +1,88 @@
+# Portfolio stack: React (nginx) + .NET API + Qdrant
+#   cp .env.example .env   # fill secrets
+#   docker compose up -d --build
+#   docker compose --profile tools run --rm rag-index
+
+services:
+  qdrant:
+    image: qdrant/qdrant:v1.13.4
+    container_name: portfolio-qdrant
+    restart: unless-stopped
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_storage:/qdrant/storage
+    networks:
+      - portfolio-network
+    
+
+  portfolio-api:
+    image: portfolio-api
+    build:
+      context: ./Portfolio.Api
+      dockerfile: Dockerfile
+    container_name: portfolio-api
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      Qdrant__Host: qdrant
+      Qdrant__Port: 6334
+      Qdrant__Https: "false"
+      Qdrant__CollectionName: ${QDRANT_COLLECTION_NAME:-portfolio-collection}
+      Cors__Origins__0: ${PUBLIC_URL:-http://localhost}
+    depends_on:
+      - qdrant
+        
+    networks:
+      - portfolio-network
+    expose:
+      - "8080"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8080/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 25s
+
+  portfolio-web:
+    image: portfolio-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+      args:
+        REACT_APP_API_URL: ${REACT_APP_API_URL:-}
+    container_name: portfolio-web
+    restart: unless-stopped
+    ports:
+      - "${WEB_PORT:-80}:80"
+    depends_on:
+      portfolio-api:
+        condition: service_healthy
+    networks:
+      - portfolio-network
+
+  rag-index:
+    image: curlimages/curl:8.12.1
+    profiles:
+      - tools
+    depends_on:
+      portfolio-api:
+        condition: service_healthy
+    networks:
+      - portfolio-network
+    command:
+      - -fsS
+      - -X
+      - POST
+      - "http://portfolio-api:8080/api/rag/index?recreate=true"
+    restart: "no"
+
+networks:
+  portfolio-network:
+    driver: bridge
+
+volumes:
+  qdrant_storage:
