@@ -48,3 +48,5 @@ jobs:
             /usr/bin/docker-compose --profile tools run --rm rag-index
 
             echo "✅ Deployment completed successfully!"
+
+            
