@@ -38,7 +38,7 @@ const Intro = () => {
           <div className="md:col-span-5">
             <div className="relative">
               <img 
-                src={`${PUBLIC_URL}/Venkat.JPG`} 
+                src={`${PUBLIC_URL}/Yashwanth.JPG`} 
                 alt="Portrait" 
                 className="grayscale border-8 border-black w-full h-auto object-cover" 
               />
