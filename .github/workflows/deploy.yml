@@ -10,25 +10,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Connect GitHub runner to your Tailscale network
       - name: Connect to Tailscale
         uses: tailscale/github-action@v3
         with:
           authkey: ${{ secrets.TS_AUTHKEY }}
 
-      - name: Deploy
+      - name: Wait for Tailscale network
+        run: sleep 10
+
+      # 2. Deploy to your server via SSH
+      - name: Deploy to VPS
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: yashpc
+          host: 100.97.42.1
           username: yash
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
+            set -e
+
+            echo "🚀 Navigating to project..."
             cd /var/www/portfolio
 
+            echo "📥 Pulling latest code..."
             git pull origin main
 
+            echo "🛑 Stopping containers..."
             /usr/bin/docker-compose down
+
+            echo "🏗️ Building containers..."
             /usr/bin/docker-compose up -d --build --remove-orphans
 
+            echo "⏳ Waiting for services..."
             sleep 30
 
+            echo "📦 Running RAG indexing..."
             /usr/bin/docker-compose --profile tools run --rm rag-index
+
+            echo "✅ Deployment completed successfully!"
