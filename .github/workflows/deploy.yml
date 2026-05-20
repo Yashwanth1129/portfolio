@@ -37,15 +37,15 @@ jobs:
             git pull origin main
 
             echo "🛑 Stopping containers..."
-            sudo /usr/bin/docker-compose down --remove-orphans || true
+            /usr/bin/docker-compose down --remove-orphans || true
 
             echo "🏗️ Building containers..."
-            sudo /usr/bin/docker-compose up -d --build --remove-orphans
+            /usr/bin/docker-compose up -d --build --remove-orphans
 
             echo "⏳ Waiting for services..."
             sleep 30
 
             echo "📦 Running RAG indexing..."
-            sudo /usr/bin/docker-compose --profile tools run --rm rag-index
+            /usr/bin/docker-compose --profile tools run --rm rag-index
 
             echo "✅ Deployment completed successfully!"
