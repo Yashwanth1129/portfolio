@@ -276,10 +276,34 @@ const Chatbot = () => {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 z-50 bg-black text-white border-4 border-black font-mono py-4 px-5 shadow-lg hover:bg-gray-900 transition-colors"
+        className={`fixed bottom-6 right-6 z-[100] font-mono text-sm uppercase tracking-wide
+          border-4 border-black transition-all
+          shadow-[5px_5px_0_0_#000000]
+          hover:shadow-[3px_3px_0_0_#000000] hover:translate-x-[2px] hover:translate-y-[2px]
+          ${isOpen
+            ? 'bg-black text-white px-5 py-3'
+            : 'bg-white text-black px-4 py-3 ring-4 ring-white/80'
+          }`}
         aria-label={isOpen ? 'Close assistant' : 'Open assistant'}
       >
-        {isOpen ? 'CLOSE' : 'CHAT'}
+        {isOpen ? (
+          'Close ×'
+        ) : (
+          <span className="flex items-center gap-2">
+            <svg
+              className="w-4 h-4 shrink-0"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="square"
+              aria-hidden="true"
+            >
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+            Ask AI
+          </span>
+        )}
       </button>
     </>
   );

@@ -30,6 +30,22 @@
       "gpa": "3.8/4.0"
     }
   ],
+  "certifications": [
+    {
+      "id": "az-900",
+      "code": "AZ-900",
+      "name": "Azure Fundamentals",
+      "issuer": "Microsoft",
+      "credentialUrl": "/az900.pdf"
+    },
+    {
+      "id": "az-204",
+      "code": "AZ-204",
+      "name": "Azure Developer Associate",
+      "issuer": "Microsoft",
+      "credentialUrl": "/az204.pdf"
+    }
+  ],
   "experience": [
     {
       "id": 1,

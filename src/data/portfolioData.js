@@ -6,7 +6,7 @@ const portfolioData = {
       phone: "(463) 279-1911",
       github: "GitHub",
       linkedin: "LinkedIn",
-      bio : "I’m Yashwanth Anantha, a software engineer and Master’s student at Indiana University Indianapolis. I specialize in building scalable C# applications using .NET, microservices, and full-stack technologies to solve complex business problems efficiently."
+      bio : "I'm Yashwanth Anantha, a software engineer and Master's student at Indiana University Indianapolis. I specialize in building scalable C# applications using .NET, microservices, and full-stack technologies to solve complex business problems efficiently."
     },
     education: [
         {
@@ -30,6 +30,22 @@ const portfolioData = {
           gpa: "3.8/4.0"
         }
       ],
+    certifications: [
+      {
+        id: "az-900",
+        code: "AZ-900",
+        name: "Azure Fundamentals",
+        issuer: "Microsoft",
+        credentialUrl: "/az900.pdf"
+      },
+      {
+        id: "az-204",
+        code: "AZ-204",
+        name: "Azure Developer Associate",
+        issuer: "Microsoft",
+        credentialUrl: "/az204.pdf"
+      }
+    ],
     experience: [
       {
         id: 1,
@@ -89,7 +105,7 @@ const portfolioData = {
           "Built an ingestion pipeline that generates embeddings via GitHub Models (OpenAI-compatible API) and stores vectors in Qdrant for semantic search.",
           "Designed a RAG workflow where job descriptions trigger vector similarity search to retrieve the most relevant resume sections before LLM tailoring.",
           "Created a Semantic Kernel plugin (`resume_search`) with automatic function calling so the chat assistant grounds responses in indexed resume data only.",
-          "Built a dedicated tailoring service that preserves the user’s original resume sections and rewrites bullets with ATS-friendly keywords without inventing experience.",
+          "Built a dedicated tailoring service that preserves the user's original resume sections and rewrites bullets with ATS-friendly keywords without inventing experience.",
           "Developed a responsive web UI with resume upload, job description input, chat-based Q&A, and structured tailor output with Markdown and PDF download.",
           "Configured Qdrant locally with Docker (gRPC/HTTP) and integrated the Microsoft Semantic Kernel Qdrant vector store connector for collection management and upsert/search operations.",
           "Used .NET Aspire AppHost and shared service defaults for observability, health checks, HTTP resilience, and multi-service orchestration.",

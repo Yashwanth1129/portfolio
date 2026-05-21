@@ -4,6 +4,7 @@ public class PortfolioData
 {
     public Profile Profile { get; set; } = new();
     public List<Education> Education { get; set; } = [];
+    public List<Certification> Certifications { get; set; } = [];
     public List<Experience> Experience { get; set; } = [];
     public List<Project> Projects { get; set; } = [];
     public List<SkillCategory> Skills { get; set; } = [];
@@ -30,6 +31,15 @@ public class Education
     public string StartDate { get; set; } = string.Empty;
     public string EndDate { get; set; } = string.Empty;
     public string Gpa { get; set; } = string.Empty;
+}
+
+public class Certification
+{
+    public string Id { get; set; } = string.Empty;
+    public string Code { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
+    public string Issuer { get; set; } = string.Empty;
+    public string CredentialUrl { get; set; } = string.Empty;
 }
 
 public class Experience

@@ -36,11 +36,11 @@ const Intro = () => {
           </div>
           
           <div className="md:col-span-5">
-            <div className="relative">
+            <div className="relative overflow-hidden border-8 border-black">
               <img 
                 src={`${PUBLIC_URL}/Yashwanth.JPG`} 
                 alt="Portrait" 
-                className="grayscale border-8 border-black w-full h-auto object-cover" 
+                className="grayscale w-full max-h-80 md:max-h-96 object-cover object-center" 
               />
               <div className="absolute bottom-6 right-6 bg-white p-2 font-mono text-sm text-black">
                 {portfolioData.profile.name}

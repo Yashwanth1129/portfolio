@@ -38,6 +38,39 @@ public class PortfolioChunker
             });
         }
 
+        if (data.Certifications.Count > 0)
+        {
+            var certSummary = new StringBuilder();
+            certSummary.AppendLine("Microsoft Azure certifications held by Yashwanth Anantha:");
+            foreach (var cert in data.Certifications)
+            {
+                certSummary.AppendLine($"- {cert.Issuer} {cert.Code}: {cert.Name}");
+            }
+
+            chunks.Add(new TextChunk
+            {
+                Id = "certifications-summary",
+                Section = "certifications",
+                Text = certSummary.ToString()
+            });
+        }
+
+        foreach (var cert in data.Certifications)
+        {
+            chunks.Add(new TextChunk
+            {
+                Id = $"certification-{cert.Id}",
+                Section = "certifications",
+                Text = $"""
+                    Certification: {cert.Issuer} {cert.Code} — {cert.Name}
+                    Exam code: {cert.Code}
+                    Issuer: {cert.Issuer}
+                    Full title: Microsoft {cert.Code}: {cert.Name}
+                    Credential document available on portfolio (PDF path: {cert.CredentialUrl})
+                    """
+            });
+        }
+
         foreach (var exp in data.Experience)
         {
             var sb = new StringBuilder();
