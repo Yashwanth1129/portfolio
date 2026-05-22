@@ -1,9 +1,8 @@
 import React from 'react';
 import portfolioData from '../data/portfolioData';
+import { publicAsset } from '../config/publicAsset';
 
 const Certifications = () => {
-  const PUBLIC_URL = process.env.PUBLIC_URL || '';
-
   return (
     <div id="certifications" className="bg-white text-black py-16">
       <div className="max-w-7xl mx-auto px-6">
@@ -32,7 +31,7 @@ const Certifications = () => {
               </div>
 
               <a
-                href={`${PUBLIC_URL}${cert.credentialUrl}`}
+                href={publicAsset(cert.credentialUrl)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-8 font-mono text-sm uppercase bg-black text-white px-4 py-3 hover:bg-gray-900 transition-colors inline-block self-start"

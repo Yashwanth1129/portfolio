@@ -2,10 +2,9 @@
 import React from 'react';
 import portfolioData from '../data/portfolioData';
 import TypingAnimation from './TypingAnimation';
+import { publicAsset } from '../config/publicAsset';
 
 const Intro = () => {
-  // This will help with GitHub Pages deployment
-  const PUBLIC_URL = process.env.PUBLIC_URL || '';
   
   return (
     <div className="bg-white py-16">
@@ -25,7 +24,7 @@ const Intro = () => {
             {/* Bottom section with button */}
             <div>
               <a 
-                href={`${PUBLIC_URL}/resume.pdf`}
+                href={publicAsset('/resume.pdf')}
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="bg-black text-white font-mono py-3 px-6 hover:bg-gray-900 transition-colors inline-block"
@@ -38,7 +37,7 @@ const Intro = () => {
           <div className="md:col-span-5">
             <div className="relative overflow-hidden border-8 border-black">
               <img 
-                src={`${PUBLIC_URL}/Yashwanth.JPG`} 
+                src={publicAsset('/Yashwanth.JPG')} 
                 alt="Portrait" 
                 className="grayscale w-full max-h-80 md:max-h-96 object-cover object-center" 
               />
